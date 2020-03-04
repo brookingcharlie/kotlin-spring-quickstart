@@ -1,3 +1,17 @@
+# Kotlin Spring Quickstart
+
+Example project comprising:
+
+* Maven
+* Kotlin
+* Spring (Web, Test)
+* JUnit 5
+* assertk
+* MockK and SpringMockK
+* ktlint
+* detekt
+* JaCoCo
+
 References:
 
 * https://spring.io/guides/tutorials/spring-boot-kotlin/
