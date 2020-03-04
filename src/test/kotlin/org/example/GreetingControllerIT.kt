@@ -13,14 +13,14 @@ import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.get
 
-@WebMvcTest(ExampleController::class)
+@WebMvcTest(GreetingController::class)
 @ExtendWith(MockKExtension::class)
-internal class ExampleControllerIT {
+internal class GreetingControllerIT {
     @Autowired
     lateinit var mockMvc: MockMvc
 
     @MockkBean(relaxed = true)
-    lateinit var exampleService: ExampleService
+    lateinit var greetingService: GreetingService
 
     @BeforeEach
     fun setUp() {
@@ -29,14 +29,14 @@ internal class ExampleControllerIT {
 
     @Test
     fun `should return message`() {
-        every { exampleService.getMessage() } returns "Hello, world!"
+        every { greetingService.getMessage() } returns "Hello, controller!"
 
-        mockMvc.get("/example") {
+        mockMvc.get("/") {
             accept = MediaType.APPLICATION_JSON
         }.andExpect {
             status { isOk }
             content { contentType(MediaType.APPLICATION_JSON) }
-            jsonPath("$.message") { value("Hello, world!") }
+            jsonPath("$.message") { value("Hello, controller!") }
         }
     }
 }
