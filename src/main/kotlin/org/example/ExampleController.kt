@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class ExampleController {
-    @GetMapping("/hello", produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun hello() = Greeting("Hello, world!")
+class ExampleController(val exampleService: ExampleService) {
+    @GetMapping("/example", produces = [MediaType.APPLICATION_JSON_VALUE])
+    fun hello() = ExampleResponse(exampleService.getMessage())
 }
 
-data class Greeting(val message: String)
+data class ExampleResponse(val message: String)

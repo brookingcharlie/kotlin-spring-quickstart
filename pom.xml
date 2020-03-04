@@ -80,6 +80,11 @@
             <version>1.9.3</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>2.4.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -168,13 +173,13 @@
                     <execution>
                         <id>ktlint-format</id>
                         <configuration>
-                        <target name="ktlint">
-                            <java taskname="ktlint" dir="${basedir}" fork="true" failonerror="true"
-                                classpathref="maven.plugin.classpath" classname="com.pinterest.ktlint.Main">
-                                <arg value="-F"/>
-                                <arg value="src/**/*.kt"/>
-                            </java>
-                        </target>
+                            <target name="ktlint">
+                                <java taskname="ktlint" dir="${basedir}" fork="true" failonerror="true"
+                                    classpathref="maven.plugin.classpath" classname="com.pinterest.ktlint.Main">
+                                    <arg value="-F"/>
+                                    <arg value="src/**/*.kt"/>
+                                </java>
+                            </target>
                         </configuration>
                         <goals>
                             <goal>run</goal>
@@ -234,7 +239,7 @@
         </plugins>
     </build>
 
-     <pluginRepositories>
+    <pluginRepositories>
         <pluginRepository>
             <snapshots>
                 <enabled>false</enabled>
