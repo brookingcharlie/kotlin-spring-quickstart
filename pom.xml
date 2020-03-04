@@ -241,6 +241,11 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <excludes>
+                        <exclude>**/ApplicationKt.class</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
