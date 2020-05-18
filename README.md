@@ -12,6 +12,11 @@ Example project comprising:
 * detekt
 * JaCoCo
 
+To run unit or integration tests use:
+
+    mvn test
+    mvn integration-test
+
 References:
 
 * https://spring.io/guides/tutorials/spring-boot-kotlin/
